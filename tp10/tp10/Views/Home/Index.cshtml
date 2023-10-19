@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido a Series Gato</h1>
+    <p>Acá veras la info necesaria</p>
+</div>
+
+
+
+
+
+
+
+@foreach (Serie item in ViewBag.Serie)
+{
+    
+<div class="card" style="width: 18rem;">
+  <img src="@item.ImagenSerie" class="card-img-top" alt="">
+  <div class="card-body">
+    <h5 class="">@item.Nombre</h5>
+    <p class="card-text"></p>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="MostrarSeries(@item.IdSerie)">
+  Ver mas info
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="MostrarTemporada(@item.IdSerie)">
+  Temporada
+</button>
+
+    <a href="" class="btn btn-primary"></a>
+  </div>
+</div>
+}
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="Nombre"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <div id="info"></div>
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+//////////////////////////////////////////////////////////////////////////////////////////
